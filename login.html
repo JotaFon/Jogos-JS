@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public\css\estilo.css">
+    <title>Tela de login</title>
+</head>
+<body>
+    <div class="main-login">
+        <div class="direita-login"></div>
+        <div class="card-login">
+            <h1>Login</h1>
+            <div class="campo-de-texto">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="validateFields()"/>
+            </div>
+            
+            <div class="campo-de-texto">
+                <label for="senha">Senha</label>
+                <input type="password" name="password" id="password" placeholder="Senha" onchange="validateFields()"/>
+            </div>
+            <button type="button" class="btn-login" id="login-button" disabled="true">Entrar</button>
+            <a href="cadastro.html" class="btn-registre" < button type="button" >Registrar</button></a>
+            <button type="button" class="btn-recuperarSenha" id="recover-password-button" disabled="true">Recuperar senha</button>
+        </div> 
+        <div class="esquerda-login">
+            <h1>Faça login<br>E comece a diversão</h1>
+        </div>
+        <img src="public\game.svg" class="esquerda-login-img" alt="game">
+    </div>
+    <script src="controller\cadastro.js"></script>
+</body>
+</html>

@@ -31,6 +31,7 @@ connection.connect((error) => {
   //UTILIZADO PARA ADICIONAR NOVAS PALAVRAS AO JOGO
   for (const tema in temas) {
     const palavras = temas[tema];
+    
     for (const palavra of palavras) {
       const selectQuery = 'SELECT palavra FROM texto WHERE palavra = ?';
       connection.query(selectQuery, [palavra], (error, results) => {

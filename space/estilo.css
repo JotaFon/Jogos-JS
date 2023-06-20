@@ -1,0 +1,57 @@
+
+body{
+    margin: 0;
+    background-image: url(quadro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.space{
+    
+}
+h2{
+    text-align: center;
+}
+#grade{
+    width: 450px;
+    height: 450px;
+    border: 1px solid black;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#grade div{
+    width: 30px;
+    height: 30px;
+    /*box-shadow: 1px 1px black; aparecer os quadrados*/
+    position: relative;
+
+}
+
+.jogador{
+    background: url("juju.png") no-repeat;
+    background-size: contain;
+}
+
+.invasor {
+    background-image: url("G.png"), url("J.png");
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+    background-position: top left, top right;
+  }
+  
+
+.tiro::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: orangered;
+    position: absolute;
+    right: 10px;
+}
+
+.kabum{
+    background: url("kabum.png") no-repeat;
+    background-size: contain;
+}

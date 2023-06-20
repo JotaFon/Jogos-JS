@@ -1,33 +1,40 @@
-function validateFields() {
-    const emailValid = isEmailValid();
-    document.getElementById("recover-password-button").disabled = !emailValid;
+document.addEventListener('DOMContentLoaded', () => {
+const formRegistro = document.getElementById('form-registro');
 
-    const passwordValid = isPasswordValid();
-    document.getElementById("login-button").disabled = !emailValid || !passwordValid;
-    //pegar o campo do email
-    // ela da uma zapiada se o email ta vazio ou nao e se e valido
-    //tando tudo ok ela vai habilitar o botao
-    //caso nao esteja ele vai deixa o botao de recuperar senha ativado
-    //pode fala jota o pai deita explicando
+formRegistro.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const usuarioInput = document.getElementById('usuario');
+  const nickInput = document.getElementById('nick');
+  const emailInput = document.getElementById('email');
+  const senhaInput = document.getElementById('senha');
+  const dtNascimentoInput = document.getElementById('dtnascimento');
 
-}
+  const usuario = usuarioInput.value.trim();
+  const nick = nickInput.value.trim();
+  const email = emailInput.value.trim();
+  const senha = senhaInput.value.trim();
+  const dtNascimento = dtNascimentoInput.value;
 
-function isEmailValid() {
-    const email = document.getElementById("email").value;
-    if (!email) {
-        return false;
-    }
-    return validateEmail(email);
-}
+  const formData = new FormData();
+  formData.append('usuario', usuario);
+  formData.append('nick', nick);
+  formData.append('email', email);
+  formData.append('password', senha); // Alterado para 'password'
+  formData.append('dtNascimento', dtNascimento);
 
-function isPasswordValid() {
-    const password = document.getElementById("password").value;
-    if (!password) {
-        return false;
-    }
-    return true;
-}
-
-function validateEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-}
+  fetch('http://localhost:3000/registro', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
+});

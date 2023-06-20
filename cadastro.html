@@ -4,43 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public\css\estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <title>Tela de login</title>
 </head>
 <body>
     <div class="main-login">
         <div class="esquerda-login">
             <h1>Registre-se<br>E entre para o mundo dos games</h1>
-            <img src="public\registro.svg" class="esquerda-login-img" alt="game">
+            <img src="public/registro.svg" class="esquerda-login-img" alt="game">
         </div>
         <div class="direita-login"></div>
         <div class="card-login">
             <h1>Registre-se</h1>
-            <div class="campo-de-texto">
-                <label for="usuario">Usuario</label>
-                <input type ="text" name="usuario" placeholder="Usuario"  required>
-            </div>
+            <form id="form-registro" method="POST" action="/registro">
+                <div class="campo-de-texto">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Usuário" required>
+                </div>
 
-            <div class="campo-de-texto">
-                <label for ="nick">Nick</label>
-                <input type="text" name="nick" placeholder="Nick"  required>
-            </div>
-            <div class="campo-de-texto">
-                <label for ="email">E-mail</label>
-                <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="validateFields()"/>
-            </div>
+                <div class="campo-de-texto">
+                    <label for="nick">Nick</label>
+                    <input type="text" id="nick" name="nick" placeholder="Nick" required>
+                </div>
+                <div class="campo-de-texto">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" onchange="validateFields()">
+                </div>
 
-            <div class="campo-de-texto">
-                <label for="senha">Senha</label>
-                <input type="password" name="password" id="password" placeholder="Senha" onchange="validateFields()"/>
-            </div>
-            <div class="campo-de-texto">
-            <label for ="dtnascimento"><b>Data de nascimento</b></label>
-            <input type="date" name="dtnascimento" required>
-            </div>
-                <button class="btn-registre" type="button" disabled="true" href="cadastro.html">Cadastre-se</button>
-        </div>
+                <div class="campo-de-texto">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" onchange="validateFields()">
+                </div>
+                <div class="campo-de-texto">
+                    <label for="dtnascimento"><b>Data de nascimento</b></label>
+                    <input type="date" id="dtnascimento" name="dtnascimento" required>
+                </div>
+                <button id="btn-registro" class="btn-registre" type="submit" disabled>Cadastre-se</button>
+            </form>
         </div>
     </div>
+
+    <script src="controller/cadastro.js"></script>
 </body>
 </html>
